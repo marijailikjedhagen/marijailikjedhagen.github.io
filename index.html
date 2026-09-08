@@ -55,12 +55,12 @@
   .rule{
     border: none;
     border-top: 1px solid var(--rule);
-    margin: 64px 0;
+    margin: 44px 0;
   }
 
   /* ---------- HERO ---------- */
   .hero{
-    padding: 88px 0 56px;
+    padding: 88px 0 32px;
   }
   .hero .tagline{
     font-size: 15px;
@@ -84,6 +84,8 @@
     font-size: 18px;
     max-width: 62ch;
     color: var(--ink-soft);
+    text-align: justify;
+    text-justify: inter-word;
   }
   .hero .links{
     margin-top: 28px;
@@ -174,15 +176,26 @@
   .edition.open .preview{ display:none; }
 
   /* ---------- PLATFORM ADAPTATION ---------- */
-  .platform-grid{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
+  .platform-stack{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
-  .platform-card{
+  .platform-row{
+    display: flex;
+    gap: 28px;
     background: var(--paper-alt);
     border-radius: 4px;
-    padding: 20px 20px 22px;
+    padding: 26px 28px;
+    align-items: flex-start;
+  }
+  .platform-text{
+    flex: 1 1 55%;
+    min-width: 0;
+  }
+  .platform-image{
+    flex: 1 1 45%;
+    min-width: 0;
   }
   .platform-card .plabel{
     font-family: 'Fraunces', serif;
@@ -191,30 +204,41 @@
     color: var(--ochre);
     margin-bottom: 6px;
   }
-  .platform-card .pnote{
+  .platform-text .plabel{
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--ochre);
+    margin-bottom: 6px;
+  }
+  .platform-text .pnote{
     font-size: 12.5px;
     color: var(--ink-soft);
     margin-bottom: 14px;
   }
-  .platform-card .pshot{
+  .platform-text .pcaption{
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .platform-text .ptags{
+    margin-top: 12px;
+    font-size: 12.5px;
+    color: var(--sage);
+  }
+  .platform-image .pshot{
     width: 100%;
     display: block;
     border-radius: 3px;
     border: 1px solid var(--rule);
-    margin-bottom: 14px;
+    transition: opacity 0.15s ease;
+    cursor: zoom-in;
   }
-  .platform-card .pcaption{
-    font-size: 14px;
-    line-height: 1.55;
-  }
-  .platform-card .ptags{
-    margin-top: 10px;
-    font-size: 12px;
-    color: var(--sage);
+  .platform-image a:hover .pshot{
+    opacity: 0.85;
   }
 
   @media (max-width: 640px){
-    .platform-grid{ grid-template-columns: 1fr; }
+    .platform-row{ flex-direction: column; }
   }
 
   /* ---------- POEM ---------- */
@@ -446,27 +470,47 @@
       <p>Same core message, adapted per channel, from a graduate project directing AI-generated social content for a small business across three platforms.</p>
     </div>
 
-    <div class="platform-grid">
-      <div class="platform-card">
-        <div class="plabel">Facebook</div>
-        <div class="pnote">Informational, warm, slightly longer</div>
-        <img class="pshot" src="images/vikingcharts-facebook.png" alt="VikingCharts Facebook post announcing new offers">
-        <div class="pcaption">"Get ready for a voyage like no other! VikingCharts is rolling out unbelievable new offers that you won't want to miss. Stay tuned and prepare to set sail on your next great adventure with us!"</div>
-        <div class="ptags">#NewOffers #SetSail #AdventureAwaits</div>
+    <div class="platform-stack">
+      <div class="platform-row">
+        <div class="platform-text">
+          <div class="plabel">Facebook</div>
+          <div class="pnote">Informational, warm, slightly longer</div>
+          <div class="pcaption">"Get ready for a voyage like no other! VikingCharts is rolling out unbelievable new offers that you won't want to miss. Stay tuned and prepare to set sail on your next great adventure with us!"</div>
+          <div class="ptags">#NewOffers #SetSail #AdventureAwaits</div>
+        </div>
+        <div class="platform-image">
+          <a href="images/vikingcharts-facebook.png" target="_blank" rel="noopener">
+            <img class="pshot" src="images/vikingcharts-facebook.png" alt="VikingCharts Facebook post announcing new offers">
+          </a>
+        </div>
       </div>
-      <div class="platform-card">
-        <div class="plabel">Instagram</div>
-        <div class="pnote">Punchier, more emoji, casual energy</div>
-        <img class="pshot" src="images/vikingcharts-instagram.png" alt="VikingCharts Instagram post announcing new offers">
-        <div class="pcaption">"🌊 Exciting news! 🌊 VikingCharts is launching fantastic new offers soon. Keep your eyes peeled and get ready to embark on your next adventure with us! 🚀"</div>
-        <div class="ptags">#NewOffers #SailAway #TravelGoals</div>
+
+      <div class="platform-row">
+        <div class="platform-text">
+          <div class="plabel">Instagram</div>
+          <div class="pnote">Punchier, more emoji, casual energy</div>
+          <div class="pcaption">"🌊 Exciting news! 🌊 VikingCharts is launching fantastic new offers soon. Keep your eyes peeled and get ready to embark on your next adventure with us! 🚀"</div>
+          <div class="ptags">#NewOffers #SailAway #TravelGoals</div>
+        </div>
+        <div class="platform-image">
+          <a href="images/vikingcharts-instagram.png" target="_blank" rel="noopener">
+            <img class="pshot" src="images/vikingcharts-instagram.png" alt="VikingCharts Instagram post announcing new offers">
+          </a>
+        </div>
       </div>
-      <div class="platform-card">
-        <div class="plabel">LinkedIn</div>
-        <div class="pnote">Formal register, business framing</div>
-        <img class="pshot" src="images/vikingcharts-linkedin.png" alt="VikingCharts LinkedIn post announcing new offers">
-        <div class="pcaption">"Exciting times ahead at VikingCharts! We're thrilled to announce new offers that will make your next maritime adventure even more memorable. Stay tuned for more information."</div>
-        <div class="ptags">#MaritimeAdventures #ProfessionalVoyage</div>
+
+      <div class="platform-row">
+        <div class="platform-text">
+          <div class="plabel">LinkedIn</div>
+          <div class="pnote">Formal register, business framing</div>
+          <div class="pcaption">"Exciting times ahead at VikingCharts! We're thrilled to announce new offers that will make your next maritime adventure even more memorable. Stay tuned for more information."</div>
+          <div class="ptags">#MaritimeAdventures #ProfessionalVoyage</div>
+        </div>
+        <div class="platform-image">
+          <a href="images/vikingcharts-linkedin.png" target="_blank" rel="noopener">
+            <img class="pshot" src="images/vikingcharts-linkedin.png" alt="VikingCharts LinkedIn post announcing new offers">
+          </a>
+        </div>
       </div>
     </div>
   </section>
