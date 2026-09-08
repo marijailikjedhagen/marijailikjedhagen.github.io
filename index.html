@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marija Ilikj Edhagen — Content Writer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: #F4EFE3;
+    --paper-alt: #ECE4D2;
+    --ink: #1F2A24;
+    --ink-soft: #4B5850;
+    --sage: #57705F;
+    --sage-deep: #3E5449;
+    --ochre: #B8853A;
+    --dusk: #131E2A;
+    --dusk-paper: #E9E2CF;
+    --rule: rgba(31,42,36,0.14);
+  }
+
+  *{ box-sizing: border-box; }
+
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin:0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a{ color: var(--sage-deep); }
+  a:hover{ color: var(--ochre); }
+
+  h1,h2,h3{
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    line-height: 1.15;
+    margin: 0;
+    color: var(--ink);
+  }
+
+  .wrap{
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  .rule{
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: 64px 0;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding: 88px 0 56px;
+  }
+  .hero .tagline{
+    font-size: 15px;
+    letter-spacing: 0.02em;
+    color: var(--sage);
+    margin-bottom: 10px;
+  }
+  .hero h1{
+    font-size: 52px;
+    font-style: italic;
+    font-weight: 500;
+  }
+  .hero .role{
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    color: var(--ink-soft);
+    margin-top: 6px;
+  }
+  .hero .bio{
+    margin-top: 28px;
+    font-size: 18px;
+    max-width: 62ch;
+    color: var(--ink-soft);
+  }
+  .hero .links{
+    margin-top: 28px;
+    display: flex;
+    gap: 22px;
+    font-size: 15px;
+  }
+  .hero .links a{
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 2px;
+  }
+
+  /* ---------- SECTION HEADS ---------- */
+  .section-head{
+    margin-bottom: 32px;
+  }
+  .section-head h2{
+    font-size: 30px;
+  }
+  .section-head p{
+    margin-top: 8px;
+    color: var(--ink-soft);
+    font-size: 16px;
+  }
+
+  /* ---------- NEWSLETTER CARDS ---------- */
+  .edition{
+    background: var(--paper-alt);
+    border-radius: 4px;
+    padding: 34px 34px 30px;
+    margin-bottom: 22px;
+  }
+  .edition + .edition{ margin-top: 22px; }
+  .edition .meta{
+    display:flex;
+    align-items:baseline;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--sage);
+    margin-bottom: 14px;
+  }
+  .edition .meta .num{
+    font-family:'Fraunces', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--ochre);
+  }
+  .edition .subject{
+    font-family:'Fraunces', serif;
+    font-size: 22px;
+    margin-bottom: 18px;
+    color: var(--ink);
+  }
+  .edition .body p{
+    margin: 0 0 16px;
+    font-size: 15.5px;
+  }
+  .edition .body p:last-child{ margin-bottom:0; }
+  .edition .body strong{ color: var(--sage-deep); }
+  .edition .body .quickhits{
+    margin: 4px 0 16px;
+    padding-left: 0;
+    list-style: none;
+  }
+  .edition .body .quickhits li{
+    font-size: 15px;
+    margin-bottom: 6px;
+  }
+  .edition .signoff{
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin-top: 18px;
+  }
+  .edition-toggle{
+    background:none;
+    border:none;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: var(--sage-deep);
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 0;
+    margin-top: 12px;
+  }
+  .edition .full{ display:none; }
+  .edition.open .full{ display:block; }
+  .edition.open .preview{ display:none; }
+
+  /* ---------- PLATFORM ADAPTATION ---------- */
+  .platform-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .platform-card{
+    background: var(--paper-alt);
+    border-radius: 4px;
+    padding: 20px 20px 22px;
+  }
+  .platform-card .plabel{
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--ochre);
+    margin-bottom: 6px;
+  }
+  .platform-card .pnote{
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    margin-bottom: 14px;
+  }
+  .platform-card .pshot{
+    width: 100%;
+    display: block;
+    border-radius: 3px;
+    border: 1px solid var(--rule);
+    margin-bottom: 14px;
+  }
+  .platform-card .pcaption{
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  .platform-card .ptags{
+    margin-top: 10px;
+    font-size: 12px;
+    color: var(--sage);
+  }
+
+  @media (max-width: 640px){
+    .platform-grid{ grid-template-columns: 1fr; }
+  }
+
+  /* ---------- POEM ---------- */
+  .poem-block{
+    background: var(--dusk);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .poem-block img{
+    width: 100%;
+    display: block;
+  }
+  .poem-caption{
+    color: var(--dusk-paper);
+    padding: 20px 26px 26px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .poem-caption a{ color: var(--dusk-paper); }
+
+  /* ---------- SOCIAL PROOF ---------- */
+  .proof-item{
+    margin-bottom: 40px;
+  }
+  .proof-item:last-child{ margin-bottom: 0; }
+  .proof-caption{
+    font-size: 14.5px;
+    color: var(--ink-soft);
+    margin-bottom: 10px;
+  }
+  .proof-caption strong{ color: var(--ink); }
+  .proof-item img{
+    width: 100%;
+    display: block;
+    border-radius: 4px;
+    border: 1px solid var(--rule);
+  }
+  .proof-stats{
+    display:flex;
+    gap: 22px;
+    margin-top: 12px;
+    font-size: 13.5px;
+    color: var(--sage-deep);
+  }
+  .proof-link{
+    margin-top: 10px;
+  }
+  .proof-link a{
+    font-size: 13.5px;
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 1px;
+  }
+
+  /* ---------- PUBLICATIONS ---------- */
+  .pub-item{
+    margin-bottom: 30px;
+  }
+  .pub-item:last-child{ margin-bottom: 0; }
+  .pub-title{
+    font-family: 'Fraunces', serif;
+    font-size: 19px;
+    line-height: 1.3;
+    margin-bottom: 8px;
+  }
+  .pub-meta{
+    font-size: 13px;
+    color: var(--sage);
+    margin-bottom: 12px;
+  }
+  .pub-abstract{
+    font-size: 15px;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+  .pub-link{
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 13.5px;
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 1px;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    padding: 60px 0 90px;
+  }
+  footer h2{
+    font-size: 26px;
+    margin-bottom: 14px;
+  }
+  footer p{
+    color: var(--ink-soft);
+    font-size: 16px;
+    max-width: 50ch;
+  }
+  footer .contact{
+    margin-top: 20px;
+    display:flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 15.5px;
+  }
+  footer .also-published{
+    margin-top: 26px;
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    max-width: 52ch;
+  }
+  footer .also-published a{
+    color: var(--ink-soft);
+    text-decoration: underline;
+  }
+  footer .signature{
+    margin-top: 40px;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--ink-soft);
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="tagline">Content Writer</div>
+    <h1>Marija Ilikj Edhagen</h1>
+    <div class="role">Writing at the intersection of AI, marketing, and story</div>
+    <p class="bio">I'm a content writer with a marketing strategist's brain and a creative writer's ear, trained in digital marketing and AEO (HubSpot-certified), with hands-on experience across SEO content, newsletters, and social media for early-stage and established brands alike. My creative writing has also been published, including in SUM Magazine, and I currently work at the intersection of AI and language, evaluating LLM outputs and training data. I'm looking to bring that same blend, clear strategic thinking plus genuine storytelling craft, to writing that makes complex AI topics click.</p>
+    <div class="links">
+      <a href="mailto:marija_ilikj@yahoo.com">marija_ilikj@yahoo.com</a>
+      <a href="https://www.linkedin.com/in/marija-ilikj-edhagen/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- NEWSLETTERS -->
+  <section id="newsletters">
+    <div class="section-head">
+      <h2>Newsletter samples</h2>
+      <p>Three connected editions on Answer Engine Optimization (AEO), written for an AI-literate audience: a trend explainer, a tactical how-to, and a metrics deep dive.</p>
+    </div>
+
+    <!-- Edition 1 -->
+    <article class="edition" id="edition-1">
+      <div class="meta"><span class="num">01</span><span>Trend explainer</span></div>
+      <div class="subject">🔍 Google isn't sending you traffic anymore.</div>
+      <div class="body">
+        <p>Quick one today. 👋</p>
+        <p>For 20 years, the goal was simple: rank #1 on Google, get the click. That's changing fast.</p>
+        <p>More searches now get answered directly by AI (ChatGPT, Perplexity, Google's AI Overviews) before anyone reaches a website. The new goal isn't ranking. It's getting <em>cited</em> inside the answer itself. People are calling this AEO: Answer Engine Optimization.</p>
+        <p>Here's the uncomfortable part: you can rank #1 by old standards and still be invisible in an AI answer, because the model never quotes you. Some teams are already seeing click-through rates drop while brand mentions inside AI answers go up. Visibility and traffic are quietly splitting apart.</p>
+        <p><strong>🔧 What's actually shifting:</strong></p>
+        <ul class="quickhits">
+          <li>Clear, direct answers near the top of a page beat slow build-ups</li>
+          <li>Structured data and FAQ formatting matter again</li>
+          <li>Being quotable is starting to matter as much as being linkable</li>
+        </ul>
+        <p><strong>👀 Worth watching:</strong> whether AI platforms start showing clear source credit. That's the difference between AEO becoming a real channel or just quietly absorbing everyone's content for free.</p>
+        <p>A couple of signals that things are already moving:</p>
+        <ul class="quickhits">
+          <li>🔹 Perplexity's publisher program expanded this month</li>
+          <li>🔹 A few SEO tools have already rebranded parts of their stack around "AI visibility"</li>
+        </ul>
+        <p>If your strategy is still 100% built around Google rankings, you might already be behind. More on what to actually do about it in the next edition.</p>
+        <p class="signoff">See you in your inbox. 👋</p>
+      </div>
+    </article>
+
+    <!-- Edition 2 -->
+    <article class="edition" id="edition-2">
+      <div class="meta"><span class="num">02</span><span>Tactical how-to</span></div>
+      <div class="subject">🚨 Your brand is invisible to AI. Here's the fix.</div>
+      <div class="body">
+        <p>🔎 Try this: type your product category into ChatGPT right now. Is your brand in the answer? For most companies, no.</p>
+        <p>Ranking #1 on Google used to be enough. Now AI answer engines summarize and skip linking altogether. If your content isn't built to be pulled and cited, you don't exist in that answer, no matter how good your old SEO was.</p>
+        <p><strong>✅ How brands are actually getting cited:</strong></p>
+        <p><strong>Answer fast.</strong> Put the actual answer in the first two sentences. Models pull from clear, self-contained answers, not slow intros. If a human has to scroll to get the point, so does the model.</p>
+        <p><strong>Format like an FAQ,</strong> even when it isn't one. Headers phrased as questions ("What is X?") make it easy for AI to lift a direct answer and attach it to you.</p>
+        <p><strong>Get mentioned elsewhere, not just linked.</strong> Reviews, comparison posts, Reddit threads all feed the "consensus" answer, even without a click.</p>
+        <p><strong>Make claims verifiable.</strong> Vague marketing copy gets filtered out. Specific numbers and named features get pulled in.</p>
+        <p>As AI Overviews grow, "ranked well, zero clicks" is becoming the default outcome for content that isn't built this way. Visibility inside the answer is the new visibility.</p>
+        <p>A couple of signs this shift is already underway:</p>
+        <ul class="quickhits">
+          <li>🔹 Some brands are now tracking "share of AI voice" the way they used to track SEO rank</li>
+          <li>🔹 Schema markup is quietly becoming table stakes again</li>
+        </ul>
+        <p>If you haven't audited how your brand shows up in AI answers, that's this week's homework. Next up: how to actually measure this.</p>
+        <p class="signoff">See you in your inbox. 👋</p>
+      </div>
+    </article>
+
+    <!-- Edition 3 -->
+    <article class="edition" id="edition-3">
+      <div class="meta"><span class="num">03</span><span>Metrics deep dive</span></div>
+      <div class="subject">📊 You can't improve what you're not measuring.</div>
+      <div class="body">
+        <p>📩 Last time: why your brand might be invisible in AI answers. Today: how do you actually know if it's working?</p>
+        <p>Traditional analytics weren't built for this. Google Analytics tracks clicks and sessions, but if someone sees your brand cited inside ChatGPT and never clicks through, your dashboard shows nothing. You could be winning at AEO and have zero proof.</p>
+        <p><strong>📈 What teams are tracking instead:</strong></p>
+        <p><strong>Share of AI voice.</strong> Run your category's common questions through ChatGPT, Perplexity, and AI Overviews, then track how often, and how favorably, you show up versus competitors. Blunt, but useful.</p>
+        <p><strong>Referral traffic from AI platforms.</strong> Perplexity, ChatGPT, and Copilot are starting to show up as traffic sources, even at low volume. A rising trend here is a real signal.</p>
+        <p><strong>Citation tracking.</strong> Some SEO tools now flag when your content gets pulled into a generated answer, even without a click. Early days, but the direction's clear.</p>
+        <p><strong>Branded search after AI exposure.</strong> If people start googling your brand name right after seeing it in an AI answer, that's a strong indirect signal, even if it never shows up cleanly in one metric.</p>
+        <p>Honestly, the tooling's still catching up. Anyone claiming a perfect AEO dashboard right now is overselling it. But tracking these four beats flying blind.</p>
+        <p>A couple of signs the tooling's starting to catch up too:</p>
+        <ul class="quickhits">
+          <li>🔹 A few SEO platforms quietly added "AI visibility" tabs recently</li>
+          <li>🔹 Expect a wave of dedicated AEO analytics tools within the year</li>
+        </ul>
+        <p>If you're still measuring success by organic clicks alone, you're missing half the picture.</p>
+        <p class="signoff">See you in your inbox. 👋</p>
+      </div>
+    </article>
+  </section>
+
+  <hr class="rule">
+
+  <!-- PLATFORM ADAPTATION -->
+  <section id="platform">
+    <div class="section-head">
+      <h2>Platform adaptation</h2>
+      <p>Same core message, adapted per channel, from a graduate project directing AI-generated social content for a small business across three platforms.</p>
+    </div>
+
+    <div class="platform-grid">
+      <div class="platform-card">
+        <div class="plabel">Facebook</div>
+        <div class="pnote">Informational, warm, slightly longer</div>
+        <img class="pshot" src="images/vikingcharts-facebook.png" alt="VikingCharts Facebook post announcing new offers">
+        <div class="pcaption">"Get ready for a voyage like no other! VikingCharts is rolling out unbelievable new offers that you won't want to miss. Stay tuned and prepare to set sail on your next great adventure with us!"</div>
+        <div class="ptags">#NewOffers #SetSail #AdventureAwaits</div>
+      </div>
+      <div class="platform-card">
+        <div class="plabel">Instagram</div>
+        <div class="pnote">Punchier, more emoji, casual energy</div>
+        <img class="pshot" src="images/vikingcharts-instagram.png" alt="VikingCharts Instagram post announcing new offers">
+        <div class="pcaption">"🌊 Exciting news! 🌊 VikingCharts is launching fantastic new offers soon. Keep your eyes peeled and get ready to embark on your next adventure with us! 🚀"</div>
+        <div class="ptags">#NewOffers #SailAway #TravelGoals</div>
+      </div>
+      <div class="platform-card">
+        <div class="plabel">LinkedIn</div>
+        <div class="pnote">Formal register, business framing</div>
+        <img class="pshot" src="images/vikingcharts-linkedin.png" alt="VikingCharts LinkedIn post announcing new offers">
+        <div class="pcaption">"Exciting times ahead at VikingCharts! We're thrilled to announce new offers that will make your next maritime adventure even more memorable. Stay tuned for more information."</div>
+        <div class="ptags">#MaritimeAdventures #ProfessionalVoyage</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- POEM -->
+  <section id="poem">
+    <div class="section-head">
+      <h2>Published poem</h2>
+      <p>"Two Swans," published in SUM Magazine (Malmö University), Issue #112, "Dusk and Dawn," Spring 2024.</p>
+      <p>SUM is the student union's student magazine, published twice a year in print and available on Malmö University's campus. "Two Swans" appears on page 56.</p>
+    </div>
+    <div class="poem-block">
+      <img src="images/two-swans-poem.jpg" alt="Two Swans, a poem by Marija Ilić, published in SUM Magazine">
+      <div class="poem-caption">Text: Marija Ilić &nbsp;·&nbsp; Visual: Samuel Ian McCarthy</div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- SOCIAL PROOF -->
+  <section id="proof">
+    <div class="section-head">
+      <h2>Recognition</h2>
+      <p>After completing HubSpot Academy's AEO Fundamentals certification, my reflection on the course was featured by HubSpot Academy itself.</p>
+    </div>
+
+    <div class="proof-item">
+      <div class="proof-caption"><strong>My original LinkedIn post</strong> on completing the AEO Fundamentals certification, with the certificate embedded and HubSpot Academy commenting directly.</div>
+      <img src="images/linkedin-aeo-post-with-comment.png" alt="Marija's LinkedIn post about completing the HubSpot AEO Fundamentals certification, with the certificate embedded, engagement stats, and a comment from HubSpot Academy">
+      <div class="proof-stats">
+        <span>25 reactions</span>
+        <span>12 comments</span>
+        <span>1,377 impressions</span>
+      </div>
+      <div class="proof-link"><a href="https://www.linkedin.com/feed/update/urn:li:activity:7491439602625368064/" target="_blank" rel="noopener">View on LinkedIn ↗</a></div>
+    </div>
+
+    <div class="proof-item">
+      <div class="proof-caption"><strong>HubSpot Academy featured my testimonial</strong> in their official post announcing the AEO certifications, and replied directly when I thanked them.</div>
+      <img src="images/hubspot-featured-thread.png" alt="HubSpot Academy's post featuring Marija's testimonial on the AEO Fundamentals certification, with her reply and HubSpot's response">
+      <div class="proof-link"><a href="https://www.linkedin.com/feed/update/urn:li:activity:7496266104378642432/" target="_blank" rel="noopener">View on LinkedIn ↗</a></div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- ACADEMIC PUBLICATIONS -->
+  <section id="publications">
+    <div class="section-head">
+      <h2>Academic publications</h2>
+      <p>Long-form research writing, on the other end of the spectrum from a five-minute newsletter.</p>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-title">Robots in Households: Investigating Residents' Perceptions and Levels of Acceptance</div>
+      <div class="pub-meta">Master's Thesis in Business & IT &nbsp;·&nbsp; IU International University of Applied Sciences &nbsp;·&nbsp; May 2026</div>
+      <p class="pub-abstract">A quantitative study of 114 respondents worldwide examining how perceptions and prior experience shape acceptance of domestic robots, finding a strong positive relationship between the two, with cleaning robots the most prevalent and most anticipated category. Published in the IU Repository.</p>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-title">The Role of Organizational Climate when Implementing Circular Business Models: A Multiple Case Study in the Swedish Context</div>
+      <div class="pub-meta">Bachelor's Thesis in Business Administration &nbsp;·&nbsp; Jönköping University &nbsp;·&nbsp; June 2022</div>
+      <p class="pub-abstract">A case study examining what organizational factors slow or accelerate the adoption of circular business practices among Swedish SMEs, who make up the majority of businesses in Europe and play a central role in the transition to a circular economy.</p>
+      <a class="pub-link" href="https://hj.diva-portal.org/smash/record.jsf?pid=diva2%3A1665046&dswid=7439" target="_blank" rel="noopener">Read on DiVA ↗</a>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- FOOTER -->
+  <footer>
+    <h2>Let's talk</h2>
+    <p>I'd love to bring this mix of strategy and storytelling to the GenAI.Works newsletter and community.</p>
+    <div class="contact">
+      <a href="mailto:marija_ilikj@yahoo.com">marija_ilikj@yahoo.com</a>
+      <a href="https://www.linkedin.com/in/marija-ilikj-edhagen/" target="_blank" rel="noopener">linkedin.com/in/marija-ilikj-edhagen</a>
+    </div>
+    <div class="signature">Marija Ilikj Edhagen</div>
+  </footer>
+
+</div>
+
+</body>
+</html>
