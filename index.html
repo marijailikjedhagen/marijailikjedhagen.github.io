@@ -148,7 +148,7 @@
     color: var(--teal-deep);
     white-space: nowrap;
   }
-    .project .pdesc{
+  .project .pdesc{
     font-size: 15px;
     color: var(--ink-soft);
     margin: 0;
@@ -161,6 +161,28 @@
     border-bottom: 1px solid var(--rule);
     padding-bottom: 1px;
   }
+  .project .proof-images{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 14px;
+  }
+  .project .proof-images img{
+    display: block;
+    width: 100%;
+    max-width: 340px;
+    border-radius: 3px;
+    border: 1px solid var(--rule);
+    cursor: zoom-in;
+    transition: opacity 0.15s ease;
+  }
+  .project .proof-images a:hover img{
+    opacity: 0.85;
+  }
+  .project .proof-images.single img{
+    max-width: 100%;
+  }
+
   /* ---------- FOOTER ---------- */
   footer{
     padding: 50px 0 80px;
@@ -222,7 +244,7 @@
           <div class="pname">Data Engineering Pipeline</div>
           <div class="pmeta">Skincare Company · Ongoing</div>
         </div>
-        <p class="pdesc">Designing the relational database schema, initially in SQLite for local testing, and contributing hands-on SQL and Python development in Visual Studio Code on a data engineering project, using Databricks to support data processing and analysis.</p>
+        <p class="pdesc">Designing the relational database schema and contributing hands-on SQL and Python development in Visual Studio Code on a data engineering project, using Databricks to support data processing and analysis.</p>
       </div>
       <div class="project">
         <div class="ptop">
@@ -230,6 +252,11 @@
           <div class="pmeta">Coffee Shop Chain · 2026</div>
         </div>
         <p class="pdesc">Developed a three-dashboard Power BI solution tracking revenue, product performance, and location insights using DAX, Power Query, and interactive KPI visualisations.</p>
+        <div class="proof-images">
+          <a href="images/company_performance_dashboard_coffee_chain.png" target="_blank" rel="noopener"><img src="images/company_performance_dashboard_coffee_chain.png" alt="Coffee Shop Chain company performance dashboard"></a>
+          <a href="images/coffee_chain_2.png" target="_blank" rel="noopener"><img src="images/coffee_chain_2.png" alt="Coffee Shop Chain product performance dashboard"></a>
+          <a href="images/coffee_chain_3.png" target="_blank" rel="noopener"><img src="images/coffee_chain_3.png" alt="Coffee Shop Chain location performance dashboard"></a>
+        </div>
       </div>
       <div class="project">
         <div class="ptop">
@@ -237,6 +264,9 @@
           <div class="pmeta">Global EV Sales Dashboard · 2026</div>
         </div>
         <p class="pdesc">Built a Power BI dashboard analysing global EV sales trends across China, Europe, and the USA from 2010 to 2024, visualising adoption patterns and regional growth trajectories.</p>
+        <div class="proof-images single">
+          <a href="images/ev_cars.png" target="_blank" rel="noopener"><img src="images/ev_cars.png" alt="EV Sales Growth dashboard"></a>
+        </div>
       </div>
       <div class="project">
         <div class="ptop">
@@ -244,6 +274,10 @@
           <div class="pmeta">Meier Drogeriemarkt GmbH · 2025</div>
         </div>
         <p class="pdesc">Designed a multidimensional data model and BI architecture for a retail drugstore chain, integrating ERP, CRM, and POS source systems via Informatica ETL through a staging area into a central data warehouse, supporting enterprise reporting via Power BI.</p>
+        <div class="proof-images">
+          <a href="images/BI_Architecture.png" target="_blank" rel="noopener"><img src="images/BI_Architecture.png" alt="Meier Drogeriemarkt GmbH BI architecture diagram"></a>
+          <a href="images/data_model.png" target="_blank" rel="noopener"><img src="images/data_model.png" alt="Data model for analysing receipts"></a>
+        </div>
       </div>
       <div class="project">
         <div class="ptop">
@@ -251,6 +285,9 @@
           <div class="pmeta">IoT Air Quality System · 2024</div>
         </div>
         <p class="pdesc">Designed a Kappa Architecture system integrating Kafka, Apache Flink, MongoDB, Presto, and Grafana for real-time sensor data processing and visualisation.</p>
+        <div class="proof-images single">
+          <a href="images/big_data_streaming_solution.png" target="_blank" rel="noopener"><img src="images/big_data_streaming_solution.png" alt="Big data streaming solution architecture diagram"></a>
+        </div>
       </div>
     </div>
   </section>
@@ -269,7 +306,7 @@
           <div class="pname">AI-Powered Decision Tool</div>
           <div class="pmeta">Cleaning Robot Advisor · 2026</div>
         </div>
-                <p class="pdesc">Built a decision-matrix tool translating MSc thesis research on domestic robots into a practical consumer-facing application. Designed the data architecture, weighting model, and validation profiles.</p>
+        <p class="pdesc">Built a decision-matrix tool translating MSc thesis research on domestic robots into a practical consumer-facing application. Designed the data architecture, weighting model, and validation profiles.</p>
         <a class="project-link" href="https://cleaning-robot-advisor.netlify.app/" target="_blank" rel="noopener">Try it ↗</a>
       </div>
       <div class="project">
@@ -278,6 +315,10 @@
           <div class="pmeta">Music Platform · 2025</div>
         </div>
         <p class="pdesc">Developed a strategic implementation plan to enhance information security, data protection practices, and regulatory compliance for an international music streaming platform.</p>
+        <div class="proof-images">
+          <a href="images/summary_of_strategic_plan.png" target="_blank" rel="noopener"><img src="images/summary_of_strategic_plan.png" alt="Summary of strategic plan for data protection compliance"></a>
+          <a href="images/improvement_plan_checklist.png" target="_blank" rel="noopener"><img src="images/improvement_plan_checklist.png" alt="Improvement plan checklist for security weaknesses and solutions"></a>
+        </div>
       </div>
     </div>
   </section>
@@ -296,7 +337,14 @@
           <div class="pname">Brand Development & Social Media Automation</div>
           <div class="pmeta">VikingCharts · 2025</div>
         </div>
-        <p class="pdesc">Created the VikingCharts brand from scratch, developing brand identity, designing social media content, and implementing a cross-platform automation system via ContentStudio, with full documentation covering architecture, testing, notifications, and performance monitoring.</p>
+        <p class="pdesc">Created the VikingCharts brand from scratch, developing brand identity, designing social media content, and implementing a cross-platform automation system via ContentStudio, with full documentation covering architecture, testing, notifications, and performance monitoring. Messaging was adapted in tone and structure across Facebook, Instagram, and LinkedIn.</p>
+        <a class="project-link" href="content-writer/#platform" target="_blank" rel="noopener">See the adapted posts in my writing portfolio ↗</a>
+        <div class="proof-images">
+          <a href="images/content_scheduling_trigger.png" target="_blank" rel="noopener"><img src="images/content_scheduling_trigger.png" alt="Content scheduling trigger flow diagram"></a>
+          <a href="images/content_approval.png" target="_blank" rel="noopener"><img src="images/content_approval.png" alt="Content approval trigger flow diagram"></a>
+          <a href="images/scheduled_posts.png" target="_blank" rel="noopener"><img src="images/scheduled_posts.png" alt="ContentStudio scheduled posts queue for VikingCharts"></a>
+          <a href="images/social_analytics.png" target="_blank" rel="noopener"><img src="images/social_analytics.png" alt="VikingCharts social analytics dashboard"></a>
+        </div>
       </div>
       <div class="project">
         <div class="ptop">
@@ -304,6 +352,9 @@
           <div class="pmeta">Next Level Events · 2019</div>
         </div>
         <p class="pdesc">Founded Next Level Events, organising a university Oktoberfest event with 100+ attendees and presenting the venture at the New Venture Trade Show, managing all event registrations, ticketing, costs, revenue, and profit tracking.</p>
+        <div class="proof-images single">
+          <a href="images/next_level_events.png" target="_blank" rel="noopener"><img src="images/next_level_events.png" alt="Next Level Events Oktoberfest event stand"></a>
+        </div>
       </div>
     </div>
   </section>
@@ -323,6 +374,9 @@
           <div class="pmeta">Gafs Kartong · 2022</div>
         </div>
         <p class="pdesc">Conducted a sustainability governance assessment for a packaging manufacturer, identifying critical sustainability aspects across production and supply chain operations and developing stakeholder communication templates to report on key sustainability areas.</p>
+        <div class="proof-images single">
+          <a href="images/gafs_kartong.png" target="_blank" rel="noopener"><img src="images/gafs_kartong.png" alt="Gafs Kartong sustainability summary infographic"></a>
+        </div>
       </div>
       <div class="project">
         <div class="ptop">
@@ -330,6 +384,9 @@
           <div class="pmeta">MakerSquare · 2021</div>
         </div>
         <p class="pdesc">Designed an award-winning sustainability solution during Science Park's 24-hour Innovation Race, leveraging product passports and QR codes to visualise local production impact.</p>
+        <div class="proof-images single">
+          <a href="images/makersquare.png" target="_blank" rel="noopener"><img src="images/makersquare.png" alt="MakerSquare product passport concept with QR code"></a>
+        </div>
       </div>
       <div class="project">
         <div class="ptop">
@@ -337,6 +394,10 @@
           <div class="pmeta">Wigells · 2021</div>
         </div>
         <p class="pdesc">Developed a Code of Conduct for supplier and supply chain management, ensuring alignment with sustainability standards and operational risk requirements.</p>
+        <div class="proof-images">
+          <a href="images/wigells.png" target="_blank" rel="noopener"><img src="images/wigells.png" alt="Wigells Code of Conduct title slide"></a>
+          <a href="images/benchmark_wigells.png" target="_blank" rel="noopener"><img src="images/benchmark_wigells.png" alt="Wigells benchmark comparison table against IKEA and Edsbyn"></a>
+        </div>
       </div>
       <div class="project">
         <div class="ptop">
@@ -344,6 +405,10 @@
           <div class="pmeta">Fjällräven · 2020</div>
         </div>
         <p class="pdesc">Developed a Common Good Matrix to evaluate key ESG metrics and sustainability performance across the organisation.</p>
+        <div class="proof-images">
+          <a href="images/common_good_matrix_explanation.png" target="_blank" rel="noopener"><img src="images/common_good_matrix_explanation.png" alt="Common Good Matrix methodology comparison"></a>
+          <a href="images/common_good_matrix.png" target="_blank" rel="noopener"><img src="images/common_good_matrix.png" alt="Final assessment radar chart from the Common Good Matrix"></a>
+        </div>
       </div>
     </div>
   </section>
