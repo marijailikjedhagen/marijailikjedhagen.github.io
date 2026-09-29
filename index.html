@@ -124,6 +124,15 @@
   .section-head h2{
     font-size: 26px;
   }
+  .section-head .section-note{
+    margin-top: 10px;
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+  .section-head .section-note a{
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+  }
 
   /* ---------- PROJECT CARDS ---------- */
   .project-grid{
@@ -247,13 +256,6 @@
     <div class="project-grid">
       <div class="project">
         <div class="ptop">
-          <div class="pname">Data Engineering Pipeline</div>
-          <div class="pmeta">Skincare Company · Ongoing</div>
-        </div>
-        <p class="pdesc">Designing the relational database schema and contributing hands-on SQL and Python development in Visual Studio Code on a data engineering project, using Databricks to support data processing and analysis.</p>
-      </div>
-      <div class="project">
-        <div class="ptop">
           <div class="pname">Business Intelligence & Analytics</div>
           <div class="pmeta">Coffee Shop Chain · 2026</div>
         </div>
@@ -294,6 +296,66 @@
         <div class="proof-images single">
           <a href="images/big_data_streaming_solution.png" target="_blank" rel="noopener"><img src="images/big_data_streaming_solution.png" alt="Big data streaming solution architecture diagram"></a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- RELATIONAL DATABASES & BASH SCRIPTING -->
+  <section id="databases">
+    <div class="section-head">
+      <div class="cat-label">Relational Databases & Bash Scripting</div>
+      <h2>Hands-on SQL and Bash scripting projects</h2>
+      <p class="section-note">Additional relational database coursework completed as part of my freeCodeCamp certification, covering Bash, SQL, PostgreSQL, Git, and more, see the full workshops <a href="https://github.com/marijailikjedhagen/freecodecamp-relational-databases-coursework" target="_blank" rel="noopener">↗</a></p>
+    </div>
+    <div class="project-grid">
+      <div class="project">
+        <div class="ptop">
+          <div class="pname">Data Engineering Pipeline</div>
+          <div class="pmeta">Skincare Company · Ongoing</div>
+        </div>
+        <p class="pdesc">Designing the relational database schema and contributing hands-on SQL and Python development in Visual Studio Code on a data engineering project, using Databricks to support data processing and analysis.</p>
+      </div>
+      <div class="project">
+        <div class="ptop">
+          <div class="pname">World Cup Database</div>
+          <div class="pmeta">Relational Database Project · 2026</div>
+        </div>
+        <p class="pdesc">Built a PostgreSQL database of World Cup match data (2014 and 2018), with a Bash script that imports records from CSV and resolves team references dynamically rather than hardcoding IDs. Wrote SQL queries using joins, aggregates, and grouping to analyze tournament results.</p>
+        <a class="project-link" href="https://github.com/marijailikjedhagen/worldcup-database" target="_blank" rel="noopener">View on GitHub ↗</a>
+      </div>
+      <div class="project">
+        <div class="ptop">
+          <div class="pname">Periodic Table Database</div>
+          <div class="pmeta">Relational Database Project · 2026</div>
+        </div>
+        <p class="pdesc">Cleaned up and restructured an existing PostgreSQL database of chemical elements: renamed unclear columns, added constraints, normalized element types into a separate lookup table, and fixed inconsistent data. Built a Bash script to look up any element by atomic number, symbol, or name.</p>
+        <a class="project-link" href="https://github.com/marijailikjedhagen/periodic-table-database" target="_blank" rel="noopener">View on GitHub ↗</a>
+      </div>
+      <div class="project">
+        <div class="ptop">
+          <div class="pname">Number Guessing Game</div>
+          <div class="pmeta">Relational Database Project · 2026</div>
+        </div>
+        <p class="pdesc">Built an interactive command-line number guessing game in Bash, backed by a PostgreSQL database that tracks every player's games and best score, tracked with clear, incremental Git commits.</p>
+        <a class="project-link" href="https://github.com/marijailikjedhagen/number-guessing-game" target="_blank" rel="noopener">View on GitHub ↗</a>
+      </div>
+      <div class="project">
+        <div class="ptop">
+          <div class="pname">Salon Appointment Scheduler</div>
+          <div class="pmeta">Relational Database Project · 2026</div>
+        </div>
+        <p class="pdesc">Built an interactive command-line booking system for a salon in Bash and PostgreSQL. The system recognizes returning customers by phone number and registers new customers automatically.</p>
+        <a class="project-link" href="https://github.com/marijailikjedhagen/salon-appointment-scheduler" target="_blank" rel="noopener">View on GitHub ↗</a>
+      </div>
+      <div class="project">
+        <div class="ptop">
+          <div class="pname">Celestial Bodies Database</div>
+          <div class="pmeta">Relational Database Project · 2026</div>
+        </div>
+        <p class="pdesc">Designed a relational schema modeling galaxies, stars, planets, and moons, connected through foreign keys (galaxy → star → planet → moon), with NOT NULL and UNIQUE constraints across every table and a range of appropriate data types.</p>
+        <a class="project-link" href="https://github.com/marijailikjedhagen/universe-database" target="_blank" rel="noopener">View on GitHub ↗</a>
       </div>
     </div>
   </section>
