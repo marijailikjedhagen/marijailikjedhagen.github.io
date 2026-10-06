@@ -111,6 +111,33 @@
     border-color: rgba(184,133,58,0.3);
   }
 
+  /* ---------- JUMP LINKS ---------- */
+  .jump-nav{
+    margin-top: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+  }
+  .jump-nav .jump-label{
+    color: var(--ink-soft);
+    margin-right: 4px;
+  }
+  .jump-nav a{
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 999px;
+    background: var(--paper-alt);
+    color: var(--sage-deep);
+    white-space: nowrap;
+    transition: background 0.15s ease;
+  }
+  .jump-nav a:hover{
+    background: #E2D8C0;
+    color: var(--sage-deep);
+  }
+
   /* ---------- SECTION HEADS ---------- */
   .section-head{
     margin-bottom: 32px;
@@ -298,6 +325,9 @@
     line-height: 1.6;
   }
   .poem-caption a{ color: var(--dusk-paper); }
+  .pub-link + .pub-link{
+    margin-left: 18px;
+  }
 
   /* ---------- SOCIAL PROOF ---------- */
   .proof-item{
@@ -419,6 +449,16 @@
       <a href="https://www.linkedin.com/in/marija-ilikj-edhagen/" target="_blank" rel="noopener">LinkedIn</a>
       <a href="../" class="gen-link">General portfolio ↗</a>
     </div>
+    <nav class="jump-nav" aria-label="Jump to a section">
+      <span class="jump-label">Jump to</span>
+      <a href="#newsletters">Newsletters</a>
+      <a href="#platform">Social posts</a>
+      <a href="#professional-work">Yacht-Match Group</a>
+      <a href="#poem">Poem</a>
+      <a href="#exhibitions">Exhibitions</a>
+      <a href="#proof">Recognition</a>
+      <a href="#publications">Publications</a>
+    </nav>
   </section>
 
   <hr class="rule">
@@ -591,6 +631,36 @@
 
   <hr class="rule">
 
+  <!-- EXHIBITIONS -->
+  <section id="exhibitions">
+    <div class="section-head">
+      <h2>Exhibitions</h2>
+      <p>Creative writing exhibited or published through Malmö University projects.</p>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-title">New Sounds</div>
+      <div class="pub-meta">Malmö University &nbsp;·&nbsp; 2023&ndash;2024</div>
+      <p class="pub-abstract">A collection of works from the Autumn 2023 Creative Writing cohort. My poem "New Sounds" was exhibited at Malmö University.</p>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-title">Tender Time</div>
+      <div class="pub-meta">Medea Lab, Malmö University &nbsp;·&nbsp; 2023</div>
+      <p class="pub-abstract">A collaborative artistic research project, presented as an installation in Venice in 2023. My poem "A light pierces through the thick white clouds," from the Spring 2023 Creative Writing cohort, is published on the project's website.</p>
+      <a class="pub-link" href="https://tendertime.uni.mau.se/stories/a-light-pierces-through-the-thick-white-clouds" target="_blank" rel="noopener">Read the poem ↗</a>
+      <a class="pub-link" href="https://tendertime.uni.mau.se/home" target="_blank" rel="noopener">About the project ↗</a>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-title">Writing 25</div>
+      <div class="pub-meta">Malmö University &nbsp;·&nbsp; 2022&ndash;2023</div>
+      <p class="pub-abstract">An exhibition of creative writing works by Malmö University students. My poem "25 years" was exhibited at Malmö University.</p>
+    </div>
+  </section>
+
+  <hr class="rule">
+
   <!-- SOCIAL PROOF -->
   <section id="proof">
     <div class="section-head">
@@ -626,7 +696,7 @@
     </div>
 
     <div class="pub-item">
-         <div class="pub-title">Robots in Households: Investigating Residents' Perceptions and Levels of Acceptance</div>
+      <div class="pub-title">Robots in Households: Investigating Residents' Perceptions and Levels of Acceptance</div>
       <div class="pub-meta">Master's Thesis in Business & IT &nbsp;·&nbsp; IU International University of Applied Sciences &nbsp;·&nbsp; May 2026</div>
       <p class="pub-abstract">A quantitative study of 114 respondents worldwide examining how perceptions and prior experience shape acceptance of domestic robots, finding a strong positive relationship between the two, with cleaning robots the most prevalent and most anticipated category. Published in the IU Repository.</p>
       <a class="pub-link" href="https://drive.google.com/file/d/1rq_CiSCI56_7vQHHLnnwjMOFw94PZXAl/view?usp=sharing" target="_blank" rel="noopener">Read full thesis ↗</a>
@@ -645,9 +715,9 @@
   <!-- FOOTER -->
   <footer>
     <h2>Let's talk</h2>
-    <p>I'd love to bring this mix of strategy and storytelling to the GenAI.Works newsletter and community.</p>
+    <p>If you're looking for a writer who can turn complex topics into content people want to read, I'd love to hear from you.</p>
     <div class="contact">
-     <a href="mailto:marija.ilikj.edhagen@gmail.com">marija.ilikj.edhagen@gmail.com</a>
+      <a href="mailto:marija.ilikj.edhagen@gmail.com">marija.ilikj.edhagen@gmail.com</a>
       <a href="mailto:marija_ilikj@yahoo.com">marija_ilikj@yahoo.com</a>
       <a href="https://www.linkedin.com/in/marija-ilikj-edhagen/" target="_blank" rel="noopener">linkedin.com/in/marija-ilikj-edhagen</a>
     </div>
