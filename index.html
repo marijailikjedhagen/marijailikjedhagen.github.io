@@ -111,6 +111,33 @@
     border-color: rgba(201,122,43,0.3);
   }
 
+  /* ---------- JUMP LINKS ---------- */
+  .jump-nav{
+    margin-top: 28px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+  }
+  .jump-nav .jump-label{
+    color: var(--ink-soft);
+    margin-right: 4px;
+  }
+  .jump-nav a{
+    text-decoration: none;
+    padding: 5px 12px;
+    border-radius: 999px;
+    background: var(--panel);
+    color: var(--teal-deep);
+    white-space: nowrap;
+    transition: background 0.15s ease;
+  }
+  .jump-nav a:hover{
+    background: #D5DDD8;
+    color: var(--teal-deep);
+  }
+
   /* ---------- SECTION HEADS ---------- */
   .section-head{
     margin-bottom: 26px;
@@ -197,6 +224,11 @@
   .project .proof-images.single img{
     max-width: 100%;
   }
+  .project .proof-caption{
+    margin-top: 8px;
+    font-size: 12.5px;
+    color: var(--ink-soft);
+  }
 
   /* ---------- FOOTER ---------- */
   footer{
@@ -244,6 +276,14 @@
       <a href="https://github.com/marijailikjedhagen" target="_blank" rel="noopener">GitHub</a>
       <a href="content-writer/" class="cw-link">Content writing portfolio ↗</a>
     </div>
+    <nav class="jump-nav" aria-label="Jump to a section">
+      <span class="jump-label">Jump to</span>
+      <a href="#data-bi">Data & BI</a>
+      <a href="#databases">Databases & Bash</a>
+      <a href="#ai-tech">AI & Tech</a>
+      <a href="#marketing">Marketing & Brand</a>
+      <a href="#sustainability">Sustainability & ESG</a>
+    </nav>
   </section>
 
   <hr class="rule">
@@ -424,6 +464,17 @@
         <div class="proof-images single">
           <a href="images/next_level_events.png" target="_blank" rel="noopener"><img src="images/next_level_events.png" alt="Next Level Events Oktoberfest event stand"></a>
         </div>
+      </div>
+      <div class="project">
+        <div class="ptop">
+          <div class="pname">Product Concept & Go-to-Market Strategy</div>
+          <div class="pmeta">HydroBox · 2019</div>
+        </div>
+        <p class="pdesc">Developed HydroBox, a home hydrogen unit that lets hydrogen car owners refuel in their own garage. In 2019 Sweden had fewer than 15 hydrogen refuelling stations, so I built the full go-to-market plan: PEST and competitor analysis of the Swedish hydrogen market, customer segmentation, a pricing strategy tested through a three-price-point survey, a commission-based distribution model with car makers like Toyota and Hyundai, and a promotion strategy. I also created the brand name and the tagline "The Future, in a Box," and pitched the concept to relevant stakeholders at Jönköping University through a poster presentation.</p>
+        <div class="proof-images single">
+          <a href="images/hydrobox_diagram.png" target="_blank" rel="noopener"><img src="images/hydrobox_diagram.png" alt="Labeled concept diagram of the HydroBox home hydrogen unit"></a>
+        </div>
+        <div class="proof-caption">Concept diagram of the HydroBox unit</div>
       </div>
     </div>
   </section>
